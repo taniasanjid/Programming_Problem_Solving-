@@ -1,23 +1,23 @@
 package org.example;
+
 import java.util.Scanner;
 
 public class Main {
-    public static boolean isPalindrome(String word) {
-        String reversedString = new StringBuilder(word).reverse().toString();
-        return word.equals(reversedString);
-    }
     public static void main(String[] args) {
+        /**taking input*/
 
         Scanner myObj = new Scanner(System.in);
-        System.out.println("Enter input :");
-        String input = myObj.nextLine();
-        input = input.replaceAll("\\s+", "").toLowerCase();
+        System.out.println("Enter word :");
+        String word = myObj.nextLine();
 
-        if (isPalindrome(input)) {
-            System.out.println("\"" + input + "\" is a palindrome.");
-        } else {
-            System.out.println("\"" + input + "\" is not a palindrome.");
-        }
+        /**reversing string*/
+
+        StringBuilder reversedString = new StringBuilder();
+        reversedString.append(word);
+        reversedString.reverse();
+/**output*/
+
+        System.out.println("Reversed word : \n" + reversedString.toString());
         myObj.close();
     }
 }
